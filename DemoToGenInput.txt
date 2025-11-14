@@ -1,0 +1,73 @@
+========================================
+Array of size n (Only integer number)
+========================================
+    int n = gen_random(1, 5);
+    cout << n << endl;
+    for (int i = 0; i < n; i++) {
+        cout << gen_random(-20, 20) << " ";
+    } cout << endl;
+
+
+========================================
+Array of size n (A permutaion array)
+========================================
+    int n = gen_random(1, 10);
+    cout << n << endl;
+    vector<int> permu;
+    for (int i = 1; i <= n; i++) permu.push_back(i);
+    shuffle(permu.begin(), permu.end(), rng);
+    for (int i = 0; i < n; i++) {
+        cout << permu[i] << " ";
+    } cout << endl;
+
+
+=====================================================
+Array of size n (Real Numbers, e.g Double, Integer)
+=====================================================
+    int n = gen_random(1, 5);
+    cout << n << endl;
+    for (int i = 0; i < n; i++) {
+        cout << gen_real_random(-20, 20) << " ";
+    } cout << endl; 
+
+
+=====================================================
+String of size n
+=====================================================
+    int n = gen_random(5, 10);
+    cout << n << endl;
+    for (int i = 0; i < n; i++) {
+        // Change the range to create string with fewer alphabet
+        char ch = 'a' + gen_random(0, 25); // 0-25 -> a to z
+        cout << ch;
+    } cout << endl;
+
+==========================================================
+String of size n (Specific Character. e.g. Binary String)
+==========================================================
+    int n = gen_random(5, 10);
+    cout << n << endl;
+    vector<char> specific = {'p', 'q', 'x', 'z'};
+    vector<char> bin_s = {'0', '1'}; // We can use this to create binary string or use random number
+    for (int i = 0; i < n; i++) {
+        cout << specific[gen_random(0, specific.size() - 1)];
+    } cout << endl;
+
+==========================================================
+Tree with n nodes (So, there must be m = n - 1 edges)
+==========================================================
+    int n = gen_random(2, 10); // Number of nodes
+    cout << n << endl;
+
+    // Create a node permutation suffle it so that the 0-index value can be random and conider as root of the tree
+    vector<int> node;
+    for (int i = 1; i <= n; i++) node.push_back(i);
+    shuffle(node.begin(), node.end(), rng);
+
+    // We will iterate from 1-index. Each it we collect node[i] with a random node fron 0 to i-1 index
+    // This will confirm sigle path from source to destination.
+    for (int i = 1; i < n; i++) {
+        int idx = gen_random(0, i - 1);
+        // Edge will be between node[idx] -> node[i]
+        cout << node[idx] << " " << node[i] << endl;
+    } cout << endl;
