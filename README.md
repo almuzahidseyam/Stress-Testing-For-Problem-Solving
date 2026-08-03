@@ -167,6 +167,6 @@ Just copy the example you need into `gen.cpp`.
 -   Gradually increase input size as your optimal solution becomes stable.
 
 ## 🙏 Acknowledgement
-https://ideone.com/WavLoL
-Designed and maintained to help competitive programmers test their logic efficiently.  
-Feel free to fork, improve, or extend this setup. ✅
+-   https://ideone.com/WavLoL
+-   Designed and maintained to help competitive programmers test their logic efficiently.  
+-   Feel free to fork, improve, or extend this setup. ✅
